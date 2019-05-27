@@ -26,7 +26,7 @@ let build = BuildTask.create "Build" [clean.IfNeeded; paketRestore] {
 // run in CI
 let _ci = BuildTask.createEmpty "CI" [clean; build]
 
-RunTaskOrDefault build
+BuildTask.runOrDefaultApp build
 ```
 
 ## API
